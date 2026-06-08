@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Languages Box | Iconic Era Premium</title>
+  <style>
+    :root{
+      --ink:#181022;
+      --muted:#6c6175;
+      --paper:#fffaf4;
+      --surface:#ffffff;
+      --line:rgba(24,16,34,.10);
+      --pink:#F85E9F;
+      --rose:#FFB3C7;
+      --lav:#C7B7FF;
+      --blue:#AEE4FF;
+      --mint:#C9F4DF;
+      --butter:#FFE9A8;
+      --plum:#2B123E;
+      --shadow:0 18px 55px rgba(24,16,34,.12);
+      --shadow-sm:0 10px 28px rgba(24,16,34,.08);
+      --radius-lg:34px;
+      --radius-md:22px;
+      --radius-sm:14px;
+      --max:1160px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 8% 4%, rgba(248,94,159,.16), transparent 28%),
+        radial-gradient(circle at 88% 6%, rgba(174,228,255,.32), transparent 26%),
+        radial-gradient(circle at 50% 100%, rgba(199,183,255,.20), transparent 35%),
+        linear-gradient(135deg,#fffaf4 0%,#fff5f9 52%,#f4fbff 100%);
+      line-height:1.55;
+    }
+
+    a{color:inherit}
+    .app-shell{min-height:100vh}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(255,250,244,.78);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      max-width:var(--max);
+      margin:auto;
+      padding:14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      min-width:max-content;
+    }
+    .logo-mark{
+      width:42px;
+      height:42px;
+      border-radius:15px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-weight:950;
+      letter-spacing:-1px;
+      background:linear-gradient(135deg,var(--plum),var(--pink));
+      box-shadow:0 8px 22px rgba(248,94,159,.28);
+    }
+    .logo-text strong{display:block;font-size:.96rem;line-height:1}
+    .logo-text span{display:block;font-size:.78rem;color:var(--muted);margin-top:3px}
+    .navlinks{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .navlinks a{
+      text-decoration:none;
+      font-size:.84rem;
+      font-weight:800;
+      color:var(--muted);
+      padding:9px 11px;
+      border-radius:999px;
+      transition:.2s;
+    }
+    .navlinks a:hover{
+      color:var(--ink);
+      background:#fff;
+      box-shadow:var(--shadow-sm);
+    }
+    .nav-cta{
+      color:#fff!important;
+      background:var(--ink);
+      box-shadow:0 8px 20px rgba(24,16,34,.18);
+    }
+
+    section{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:56px 20px;
+    }
+    .hero{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      min-height:82vh;
+      align-items:center;
+      gap:34px;
+      padding-top:72px;
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--plum);
+      background:rgba(255,255,255,.78);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-sm);
+      border-radius:999px;
+      padding:8px 12px;
+      font-size:.83rem;
+      font-weight:900;
+      margin-bottom:20px;
+    }
+    .dot{width:9px;height:9px;background:var(--pink);border-radius:99px;box-shadow:0 0 0 5px rgba(248,94,159,.12)}
+    h1,h2,h3,h4{margin:0;line-height:1.05}
+    h1{
+      font-size:clamp(3.25rem,8vw,7.4rem);
+      letter-spacing:-.07em;
+      max-width:780px;
+    }
+    h2{
+      font-size:clamp(2.1rem,5vw,4.45rem);
+      letter-spacing:-.055em;
+      margin-bottom:16px;
+    }
+    h3{
+      font-size:1.42rem;
+      letter-spacing:-.025em;
+      margin-bottom:10px;
+    }
+    h4{
+      font-size:1rem;
+      margin-bottom:8px;
+    }
+    .accent{
+      background:linear-gradient(90deg,var(--pink),#9B5CFF,var(--plum));
+      background-clip:text;
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+    .lead{
+      max-width:700px;
+      color:#382a45;
+      font-size:1.14rem;
+      margin:18px 0 0;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:28px;
+    }
+    .btn{
+      border:none;
+      appearance:none;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      padding:14px 19px;
+      border-radius:999px;
+      background:var(--ink);
+      color:#fff;
+      font-weight:900;
+      font-size:.95rem;
+      box-shadow:0 14px 30px rgba(24,16,34,.22);
+      transition:.2s transform,.2s box-shadow,.2s background;
+    }
+    .btn:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(24,16,34,.25)}
+    .btn.secondary{
+      background:#fff;
+      color:var(--ink);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-sm);
+    }
+    .btn.pink{background:linear-gradient(135deg,var(--pink),#9B5CFF)}
+    .hero-panel{
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(255,255,255,.8);
+      border-radius:42px;
+      box-shadow:var(--shadow);
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-panel::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 90% 18%, rgba(248,94,159,.20), transparent 24%),
+        radial-gradient(circle at 18% 82%, rgba(174,228,255,.35), transparent 26%);
+      pointer-events:none;
+    }
+    .movie-card{
+      position:relative;
+      border-radius:32px;
+      min-height:520px;
+      background:
+        linear-gradient(145deg,rgba(43,18,62,.82),rgba(248,94,159,.60)),
+        repeating-linear-gradient(90deg,rgba(255,255,255,.12) 0 1px, transparent 1px 15px);
+      padding:28px;
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      overflow:hidden;
+    }
+    .movie-card::after{
+      content:"";
+      position:absolute;
+      width:280px;
+      height:280px;
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:50%;
+      right:-80px;
+      bottom:-80px;
+      box-shadow:0 0 0 32px rgba(255,255,255,.04),0 0 0 64px rgba(255,255,255,.025);
+    }
+    .badge-row{display:flex;flex-wrap:wrap;gap:9px;position:relative;z-index:1}
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      border:1px solid rgba(255,255,255,.25);
+      background:rgba(255,255,255,.14);
+      color:#fff;
+      border-radius:999px;
+      padding:7px 10px;
+      font-weight:850;
+      font-size:.8rem;
+      backdrop-filter:blur(12px);
+    }
+    .movie-title{
+      position:relative;
+      z-index:1;
+      max-width:360px;
+    }
+    .movie-title p{color:rgba(255,255,255,.80);font-weight:700}
+    .poster-title{
+      font-size:clamp(2.4rem,5vw,4.3rem);
+      line-height:.92;
+      letter-spacing:-.06em;
+      font-weight:950;
+      margin-bottom:14px;
+    }
+    .stats{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+    }
+    .stat{
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:18px;
+      padding:13px;
+      backdrop-filter:blur(10px);
+    }
+    .stat strong{display:block;font-size:1.15rem}
+    .stat span{display:block;font-size:.75rem;color:rgba(255,255,255,.75)}
+
+    .section-header{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:24px;
+      margin-bottom:24px;
+    }
+    .section-header p{
+      max-width:640px;
+      color:var(--muted);
+      margin:0;
+    }
+    .label{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:.78rem;
+      font-weight:950;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--pink);
+      margin-bottom:12px;
+    }
+    .label::before{
+      content:"";
+      width:22px;
+      height:2px;
+      background:var(--pink);
+      border-radius:99px;
+    }
+
+    .grid{display:grid;gap:18px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .card{
+      background:rgba(255,255,255,.86);
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow-sm);
+      padding:24px;
+    }
+    .card.compact{padding:18px;border-radius:24px}
+    .feature-card{
+      position:relative;
+      overflow:hidden;
+      min-height:210px;
+    }
+    .feature-card::after{
+      content:"";
+      position:absolute;
+      width:100px;
+      height:100px;
+      right:-30px;
+      top:-30px;
+      border-radius:50%;
+      background:rgba(248,94,159,.12);
+    }
+    .icon{
+      width:42px;
+      height:42px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,var(--butter),var(--rose));
+      margin-bottom:16px;
+      font-size:1.2rem;
+    }
+    .card p{color:var(--muted)}
+    .support{
+      background:linear-gradient(135deg,rgba(255,233,168,.55),rgba(255,255,255,.82));
+      border:1px solid rgba(255,214,92,.55);
+      border-radius:22px;
+      padding:16px;
+      color:#3d2b1a;
+      margin:16px 0;
+    }
+    .support strong{color:var(--ink)}
+    .callout{
+      border-radius:24px;
+      padding:18px;
+      background:linear-gradient(135deg,rgba(199,183,255,.26),rgba(174,228,255,.22));
+      border:1px solid rgba(24,16,34,.08);
+    }
+
+    .journey{
+      position:relative;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:14px;
+      counter-reset:step;
+    }
+    .step{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:18px;
+      box-shadow:var(--shadow-sm);
+      counter-increment:step;
+      position:relative;
+    }
+    .step::before{
+      content:counter(step);
+      width:34px;
+      height:34px;
+      border-radius:14px;
+      background:var(--ink);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight:950;
+      margin-bottom:14px;
+    }
+    .step h3{font-size:1.05rem}
+    .step p{font-size:.92rem;margin-bottom:0}
+
+    .tabs{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:22px;
+      position:sticky;
+      top:72px;
+      z-index:80;
+      background:rgba(255,250,244,.82);
+      backdrop-filter:blur(12px);
+      padding:12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-sm);
+    }
+    .tab{
+      border:none;
+      cursor:pointer;
+      padding:10px 14px;
+      border-radius:999px;
+      background:transparent;
+      color:var(--muted);
+      font-weight:900;
+      font-size:.88rem;
+      transition:.2s;
+    }
+    .tab.active{
+      background:var(--ink);
+      color:#fff;
+      box-shadow:0 8px 18px rgba(24,16,34,.18);
+    }
+    .panel{display:none}
+    .panel.active{display:block}
+    .mission-layout{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:18px;
+      align-items:start;
+    }
+    .mission-sidebar{
+      position:sticky;
+      top:152px;
+    }
+    .mini-list{
+      list-style:none;
+      padding:0;
+      margin:14px 0 0;
+      display:grid;
+      gap:10px;
+    }
+    .mini-list li{
+      padding:12px;
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--line);
+      border-radius:16px;
+      color:var(--muted);
+    }
+    .mini-list strong{color:var(--ink)}
+    .activity{
+      display:grid;
+      gap:16px;
+    }
+    .activity-step{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:20px;
+      box-shadow:var(--shadow-sm);
+    }
+    .activity-step .step-title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:10px;
+      font-weight:950;
+    }
+    .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .chip{
+      display:inline-flex;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      padding:7px 10px;
+      font-size:.82rem;
+      font-weight:800;
+      color:#493d55;
+    }
+    .starter-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+    }
+    .starter{
+      background:rgba(248,94,159,.07);
+      border:1px solid rgba(248,94,159,.15);
+      border-radius:16px;
+      padding:12px;
+      font-weight:750;
+      color:#392643;
+    }
+    .pronunciation{
+      background:linear-gradient(135deg,rgba(199,183,255,.26),rgba(255,255,255,.88));
+      border:1px solid rgba(123,92,255,.12);
+      border-radius:22px;
+      padding:16px;
+    }
+    .mistake{
+      background:linear-gradient(135deg,rgba(255,179,199,.28),rgba(255,255,255,.88));
+      border:1px solid rgba(248,94,159,.16);
+      border-radius:22px;
+      padding:16px;
+    }
+    .random-card{
+      min-height:124px;
+      border-radius:28px;
+      background:
+        linear-gradient(135deg,rgba(43,18,62,.92),rgba(248,94,159,.78)),
+        radial-gradient(circle at 70% 10%,rgba(255,255,255,.18),transparent 30%);
+      color:#fff;
+      padding:24px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      font-size:1.08rem;
+      font-weight:900;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .quiz-card{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    .question{
+      padding:16px;
+      border-radius:22px;
+      background:#fff;
+      border:1px solid var(--line);
+      margin-bottom:12px;
+    }
+    .option{
+      display:block;
+      padding:12px 13px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      margin:8px 0;
+      cursor:pointer;
+      transition:.18s;
+      background:#fff;
+      color:#463950;
+      font-weight:700;
+    }
+    .option:hover{border-color:rgba(248,94,159,.35);background:rgba(248,94,159,.05)}
+    .option input{margin-right:8px}
+    .result{
+      display:none;
+      background:linear-gradient(135deg,#fff,rgba(201,244,223,.48));
+      border:1px solid rgba(24,16,34,.10);
+      border-radius:30px;
+      padding:22px;
+      box-shadow:var(--shadow-sm);
+    }
+    .result.show{display:block}
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+    }
+    label span{
+      display:block;
+      font-size:.82rem;
+      font-weight:900;
+      margin:0 0 7px;
+      color:#45364f;
+    }
+    input[type="text"], textarea{
+      width:100%;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:#fff;
+      padding:13px 14px;
+      color:var(--ink);
+      font:inherit;
+      outline:none;
+      transition:.18s;
+    }
+    input[type="text"]:focus, textarea:focus{
+      border-color:rgba(248,94,159,.5);
+      box-shadow:0 0 0 4px rgba(248,94,159,.10);
+    }
+    textarea{min-height:98px;resize:vertical}
+    .output{
+      display:none;
+      margin-top:18px;
+      padding:22px;
+      border-radius:28px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-sm);
+    }
+
+    .vocab-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+    }
+    .vocab{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:18px;
+      min-height:210px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      box-shadow:var(--shadow-sm);
+      transition:.2s transform;
+    }
+    .vocab:hover{transform:translateY(-3px)}
+    .vocab-word{
+      font-size:1.35rem;
+      font-weight:950;
+      letter-spacing:-.03em;
+      color:var(--plum);
+      margin-bottom:8px;
+    }
+    .vocab small{color:var(--muted);font-weight:800}
+    .vocab p{margin:8px 0;color:var(--muted)}
+    .vocab .example{
+      background:rgba(255,233,168,.45);
+      padding:10px;
+      border-radius:14px;
+      color:#3b2e2e;
+      font-size:.92rem;
+    }
+
+    .checklist{
+      display:grid;
+      gap:9px;
+      margin-top:14px;
+    }
+    .checkitem{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      padding:12px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      color:#493d55;
+      font-weight:700;
+    }
+    .progress-wrap{
+      height:14px;
+      border-radius:999px;
+      overflow:hidden;
+      background:rgba(24,16,34,.08);
+      margin:12px 0 18px;
+    }
+    .progress-bar{
+      height:100%;
+      width:0;
+      background:linear-gradient(90deg,var(--pink),#9B5CFF,var(--blue));
+      border-radius:999px;
+      transition:.25s;
+    }
+
+    .footer{
+      margin-top:40px;
+      background:var(--ink);
+      color:#fff;
+      padding:44px 20px;
+    }
+    .footer-inner{
+      max-width:var(--max);
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .footer p{color:rgba(255,255,255,.72);margin:7px 0 0}
+
+    @media(max-width:980px){
+      .hero,.mission-layout,.quiz-card{grid-template-columns:1fr}
+      .mission-sidebar{position:static}
+      .journey{grid-template-columns:1fr 1fr}
+      .tabs{position:static;border-radius:28px}
+    }
+    @media(max-width:760px){
+      section{padding:42px 16px}
+      .nav{flex-direction:column;align-items:flex-start}
+      .navlinks{justify-content:flex-start}
+      .hero{padding-top:40px}
+      h1{letter-spacing:-.055em}
+      .grid-2,.grid-3,.grid-4,.form-grid,.vocab-grid,.starter-grid,.journey,.stats{grid-template-columns:1fr}
+      .movie-card{min-height:440px}
+      .section-header{display:block}
+    }
+    @media print{
+      .topbar,.tabs,.hero-actions,.btn{display:none!important}
+      body{background:#fff}
+      section{padding:22px 10px;page-break-inside:avoid}
+      .card,.hero-panel,.activity-step,.vocab{box-shadow:none}
+      .panel{display:block!important}
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <nav class="nav">
+        <a class="logo" href="#home" aria-label="The Languages Box Home">
+          <div class="logo-mark">LB</div>
+          <div class="logo-text">
+            <strong>The Languages Box</strong>
+            <span>Iconic Era · Premium Speaking Lab</span>
+          </div>
+        </a>
+        <div class="navlinks" aria-label="Main navigation">
+          <a href="#journey">Journey</a>
+          <a href="#quiz">Quiz</a>
+          <a href="#character">Character</a>
+          <a href="#missions">Missions</a>
+          <a href="#vocabulary">Vocabulary</a>
+          <a class="nav-cta" href="#festival">Final Festival</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div>
+          <div class="kicker"><span class="dot"></span> Virtual Speaking Box · B1+ to C1 · Spanish-speaker friendly</div>
+          <h1><span class="accent">Iconic Era</span><br/>Speak Like a Main Character</h1>
+          <p class="lead">
+            A premium virtual speaking experience inspired by millennial movies, rom-com drama, Y2K nostalgia and coming-of-age stories. Students create characters, survive social drama, practice pronunciation and perform an original final scene.
+          </p>
+          <div class="support">
+            <strong>Apoyo en español:</strong> Esta caja está diseñada para que estudiantes hispanohablantes no se bloqueen al hablar. Cada misión incluye vocabulario previo, frases modelo, errores comunes, pronunciación y una estructura clara para responder mejor.
+          </div>
+          <div class="hero-actions">
+            <a class="btn pink" href="#quiz">Start with the Quiz ✦</a>
+            <a class="btn secondary" href="#journey">Explore the Journey</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Experience preview">
+          <div class="movie-card">
+            <div class="badge-row">
+              <span class="badge">💿 Y2K</span>
+              <span class="badge">🎬 Rom-com</span>
+              <span class="badge">🗣️ Speaking</span>
+              <span class="badge">✨ Glow-up</span>
+            </div>
+            <div class="movie-title">
+              <div class="poster-title">Your English Glow-Up Starts Here</div>
+              <p>No endless worksheets. No cold grammar drills. Just guided speaking missions with personality, drama and structure.</p>
+            </div>
+            <div class="stats">
+              <div class="stat"><strong>6</strong><span>core sections</span></div>
+              <div class="stat"><strong>4</strong><span>speaking missions</span></div>
+              <div class="stat"><strong>1</strong><span>final scene</span></div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="journey">
+        <div class="section-header">
+          <div>
+            <div class="label">Learning Journey</div>
+            <h2>A clearer path for the student</h2>
+          </div>
+          <p>Instead of showing too much content at once, the experience guides students step by step from low-pressure choices to creative speaking performance.</p>
+        </div>
+
+        <div class="journey">
+          <div class="step">
+            <h3>Enter the era</h3>
+            <p>Understand the theme, rules, goals and emotional tone of the box.</p>
+          </div>
+          <div class="step">
+            <h3>Find your type</h3>
+            <p>Take a quiz and receive a main character archetype.</p>
+          </div>
+          <div class="step">
+            <h3>Create a character</h3>
+            <p>Build a public image, secret, insecurity, dream and iconic phrase.</p>
+          </div>
+          <div class="step">
+            <h3>Complete missions</h3>
+            <p>Practice speaking through popularity, love, glow-ups and family pressure.</p>
+          </div>
+          <div class="step">
+            <h3>Perform</h3>
+            <p>Create and present an original final scene using the language learned.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-header">
+          <div>
+            <div class="label">What makes it premium</div>
+            <h2>Designed like a product, not a worksheet</h2>
+          </div>
+        </div>
+        <div class="grid grid-4">
+          <article class="card feature-card">
+            <div class="icon">🧭</div>
+            <h3>Clear UX</h3>
+            <p>Navigation, progressive missions and short activity blocks help students know exactly what to do next.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="icon">🇪🇸</div>
+            <h3>Spanish support</h3>
+            <p>Strategic Spanish guidance reduces anxiety without turning the whole experience into translation.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="icon">🎙️</div>
+            <h3>Speaking-first</h3>
+            <p>Every section ends in oral production: opinion, role-play, storytelling, confrontation or performance.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="icon">💎</div>
+            <h3>Premium aesthetic</h3>
+            <p>Soft glass cards, editorial hierarchy and refined Y2K details make the experience feel polished.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="quiz">
+        <div class="section-header">
+          <div>
+            <div class="label">Mission 0</div>
+            <h2>What’s Your Main Character Type?</h2>
+          </div>
+          <p>A low-pressure interactive quiz that gives students a role identity before they begin speaking.</p>
+        </div>
+
+        <div class="card quiz-card">
+          <div>
+            <div class="question">
+              <h3>1. In a movie, your energy would be...</h3>
+              <label class="option"><input type="radio" name="q1" value="popular"> Charming, visible and socially powerful.</label>
+              <label class="option"><input type="radio" name="q1" value="rebel"> Independent, honest and hard to control.</label>
+              <label class="option"><input type="radio" name="q1" value="romantic"> Emotional, hopeful and secretly intense.</label>
+              <label class="option"><input type="radio" name="q1" value="underdog"> Quiet at first, but stronger than people expect.</label>
+            </div>
+            <div class="question">
+              <h3>2. Your biggest conflict would be...</h3>
+              <label class="option"><input type="radio" name="q2" value="overachiever"> Trying to be perfect all the time.</label>
+              <label class="option"><input type="radio" name="q2" value="glow"> Becoming confident without losing yourself.</label>
+              <label class="option"><input type="radio" name="q2" value="villain"> Being judged before people know your story.</label>
+              <label class="option"><input type="radio" name="q2" value="bestfriend"> Supporting everyone but forgetting your own dreams.</label>
+            </div>
+            <div class="question">
+              <h3>3. Choose your iconic line.</h3>
+              <label class="option"><input type="radio" name="q3" value="rebel"> “I don’t need everyone to like me.”</label>
+              <label class="option"><input type="radio" name="q3" value="romantic"> “I just want something real.”</label>
+              <label class="option"><input type="radio" name="q3" value="glow"> “I’m not changing. I’m becoming.”</label>
+              <label class="option"><input type="radio" name="q3" value="popular"> “Being seen is not the same as being known.”</label>
+            </div>
+            <button class="btn pink" onclick="showQuizResult()">Reveal my type</button>
+          </div>
+
+          <aside>
+            <div id="quizResult" class="result">
+              <h3>Your result will appear here.</h3>
+              <p>Choose your answers and click the button.</p>
+            </div>
+            <div class="support">
+              <strong>Spanish-speaker tip:</strong> Don’t translate full sentences in your head. Choose your archetype, pick 3 keywords, then explain your reason with a sentence starter.
+            </div>
+            <div class="callout">
+              <h3>Sentence starters</h3>
+              <div class="starter-grid">
+                <div class="starter">I think I am the ___ because...</div>
+                <div class="starter">People usually see me as..., but actually...</div>
+                <div class="starter">My strength is...</div>
+                <div class="starter">If I were in a movie, my conflict would be...</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="character">
+        <div class="section-header">
+          <div>
+            <div class="label">Mission 1</div>
+            <h2>Create Your Iconic Character</h2>
+          </div>
+          <p>Students build an original character they will use across all missions. This creates continuity and makes speaking feel safer and more playful.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <div class="form-grid">
+              <label><span>Character name</span><input id="cName" type="text" placeholder="Example: Mia Sterling"></label>
+              <label><span>Age</span><input id="cAge" type="text" placeholder="Example: 18"></label>
+              <label><span>Public image</span><input id="cImage" type="text" placeholder="People think this character is..."></label>
+              <label><span>Private insecurity</span><input id="cInsecurity" type="text" placeholder="Deep down, this character feels..."></label>
+              <label><span>Secret</span><input id="cSecret" type="text" placeholder="The secret nobody knows is..."></label>
+              <label><span>Biggest dream</span><input id="cDream" type="text" placeholder="This character dreams of..."></label>
+              <label><span>Reputation</span><input id="cRep" type="text" placeholder="People say this character is..."></label>
+              <label><span>Iconic phrase</span><input id="cPhrase" type="text" placeholder="Example: I am not dramatic. I am cinematic."></label>
+            </div>
+            <div class="hero-actions">
+              <button class="btn pink" onclick="generateCharacterProfile()">Create profile card</button>
+              <button class="btn secondary" onclick="randomCharacter()">Surprise me</button>
+            </div>
+            <div id="characterOutput" class="output"></div>
+          </div>
+
+          <div class="grid">
+            <div class="card compact">
+              <h3>Speaking structure</h3>
+              <div class="starter-grid">
+                <div class="starter">My character seems..., but actually...</div>
+                <div class="starter">People think my character is..., however...</div>
+                <div class="starter">Deep down, my character feels...</div>
+                <div class="starter">By the end, my character learns that...</div>
+              </div>
+            </div>
+            <div class="card compact">
+              <h3>Upgrade your answer</h3>
+              <p><strong>Basic:</strong> She is popular.</p>
+              <p><strong>Better:</strong> She seems popular, but she feels lonely.</p>
+              <p><strong>Advanced:</strong> Although she is admired by everyone, her public image has become a mask that hides her insecurity.</p>
+            </div>
+            <div class="mistake">
+              <h3>Common mistakes</h3>
+              <p>Don’t say: <strong>People thinks</strong>. Say: <strong>People think</strong>.</p>
+              <p>Don’t say: <strong>She has 18 years</strong>. Say: <strong>She is 18 years old</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="missions">
+        <div class="section-header">
+          <div>
+            <div class="label">Core Speaking Missions</div>
+            <h2>Less confusion, more speaking</h2>
+          </div>
+          <p>Each mission has the same friendly rhythm: warm-up, vocabulary, sentence starters, main task, pronunciation, reflection.</p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Mission tabs">
+          <button class="tab active" onclick="openMission('popularity', this)">Popularity</button>
+          <button class="tab" onclick="openMission('love', this)">Love & Red Flags</button>
+          <button class="tab" onclick="openMission('glow', this)">Glow-Up</button>
+          <button class="tab" onclick="openMission('family', this)">Family Pressure</button>
+        </div>
+
+        <div id="popularity" class="panel active">
+          <div class="mission-layout">
+            <aside class="mission-sidebar card">
+              <div class="label">Mission 2</div>
+              <h2>Popularity, Cliques & Social Survival</h2>
+              <p>Talk about reputation, belonging, gossip and power dynamics.</p>
+              <ul class="mini-list">
+                <li><strong>Speaking mode:</strong> debate + social map</li>
+                <li><strong>Language:</strong> contrast, reasons, examples</li>
+                <li><strong>Final output:</strong> explain a school conflict</li>
+              </ul>
+            </aside>
+            <div class="activity">
+              <div class="activity-step">
+                <div class="step-title">01 · Warm-up</div>
+                <p>Choose one question and answer in 30 seconds.</p>
+                <div class="chip-row">
+                  <span class="chip">Is popularity power or a trap?</span>
+                  <span class="chip">Can gossip destroy someone’s reputation?</span>
+                  <span class="chip">Do groups make people safer or less authentic?</span>
+                </div>
+              </div>
+              <div class="activity-step">
+                <div class="step-title">02 · Vocabulary boost</div>
+                <div class="chip-row">
+                  <span class="chip">clique = grupo cerrado</span>
+                  <span class="chip">reputation = reputación</span>
+                  <span class="chip">outsider = excluido/a</span>
+                  <span class="chip">fake friend = amigo falso</span>
+                  <span class="chip">social pressure = presión social</span>
+                </div>
+              </div>
+              <div class="activity-step">
+                <div class="step-title">03 · Main task: The High School Social Map</div>
+                <p>Create a fictional school. Decide who has power, who feels excluded, who is pretending, and what conflict is about to explode.</p>
+                <div id="popCard" class="random-card">Click below to generate a social conflict.</div>
+                <div class="hero-actions"><button class="btn pink" onclick="randomPop()">Generate conflict</button></div>
+              </div>
+              <div class="activity-step">
+                <div class="step-title">04 · Sentence starters</div>
+                <div class="starter-grid">
+                  <div class="starter">The most powerful group is...</div>
+                  <div class="starter">This character feels excluded because...</div>
+                  <div class="starter">At first glance, they seem..., but actually...</div>
+                  <div class="starter">I believe popularity becomes dangerous when...</div>
+                </div>
+              </div>
+              <div class="pronunciation">
+                <h3>Pronunciation Lab</h3>
+                <p>Practice stress: <strong>rep-u-TA-tion</strong>, <strong>pop-u-LA-ri-ty</strong>, <strong>ex-CLU-ded</strong>, <strong>mis-un-der-STOOD</strong>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="love" class="panel">
+          <div class="mission-layout">
+            <aside class="mission-sidebar card">
+              <div class="label">Mission 3</div>
+              <h2>Love, Crushes & Red Flags</h2>
+              <p>Practice advice, boundaries, emotional vocabulary and romantic conflict.</p>
+              <ul class="mini-list">
+                <li><strong>Speaking mode:</strong> role-play + advice</li>
+                <li><strong>Language:</strong> should, would, conditionals</li>
+                <li><strong>Final output:</strong> confrontation or advice scene</li>
+              </ul>
+            </aside>
+            <div class="activity">
+              <div class="activity-step">
+                <div class="step-title">01 · Warm-up</div>
+                <div class="chip-row">
+                  <span class="chip">Is love supposed to be complicated?</span>
+                  <span class="chip">What red flag do people ignore?</span>
+                  <span class="chip">Can lying ever protect someone?</span>
+                </div>
+              </div>
+              <div class="activity-step">
+                <div class="step-title">02 · Vocabulary boost</div>
+                <div class="chip-row">
+                  <span class="chip">crush = traga/enamoramiento</span>
+                  <span class="chip">red flag = señal de alarma</span>
+                  <span class="chip">boundary = límite</span>
+                  <span class="chip">betrayal = traición</span>
+                  <span class="chip">deserve = merecer</span>
+                </div>
+              </div>
+              <div class="activity-step">
+                <div class="step-title">03 · Main task: Rom-Com Crisis Cards</div>
+                <p>Generate a romantic crisis. React, give advice, confront someone or defend a character.</p>
+                <div id="loveCard" class="random-card">Click below to generate romantic drama.</div>
+                <div class="hero-actions"><button class="btn pink" onclick="randomLove()">Generate crisis</button></div>
+              </div>
+              <div class="activity-step">
+                <div class="step-title">04 · Boundary phrases</div>
+                <div class="starter-grid">
+                  <div class="starter">If I were her, I would...</div>
+                  <div class="starter">That is a red flag because...</div>
+                  <div class="starter">I would set a boundary by saying...</div>
+                  <div class="starter">She deserves someone who...</div>
+                </div>
+              </div>
+              <div class="pronunciation">
+                <h3>Pronunciation Lab</h3>
+                <p>Practice /ʃ/ and /tʃ/: <strong>she</strong>, <strong>crush</strong>, <strong>charming</strong>, <strong>change</strong>, <strong>choose</strong>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="glow" class="panel">
+          <div class="mission-layout">
+            <aside class="mission-sidebar card">
+              <div class="label">Mission 4</div>
+              <h2>Glow-Up or Give-Up?</h2>
+              <p>Talk about self-worth, transformation, confidence and being underestimated.</p>
+              <ul class="mini-list">
+                <li><strong>Speaking mode:</strong> interview + storytelling</li>
+                <li><strong>Language:</strong> used to, present perfect, contrast</li>
+                <li><strong>Final output:</strong> glow-up interview</li>
+              </ul>
+            </aside>
+            <div class="activity">
+              <div class="activity-step">
+                <div class="step-title">01 · Warm-up</div>
+                <div class="chip-row">
+                  <span class="chip">Do you believe in glow-ups?</span>
+                  <span class="chip">Can people change without losing themselves?</span>
+                  <span class="chip">Have you ever been underestimated?</span>
+                </div>
+              </div>
+              <div class="activity-step">
+                <div class="step-title">02 · Vocabulary boost</div>
+                <div class="chip-row">
+                  <span class="chip">glow-up = transformación positiva</span>
+                  <span class="chip">underestimated = subestimado/a</span>
+                  <span class="chip">self-worth = valor propio</span>
+                  <span class="chip">assertive = asertivo/a</span>
+                  <span class="chip">awkward = torpe/incómodo/a</span>
+                </div>
+              </div>
+              <div class="activity-step">
+                <div class="step-title">03 · Main task: The Glow-Up Interview</div>
+                <p>Interview your character about who they used to be, what changed and what they finally understood.</p>
+                <div id="glowCard" class="random-card">Click below to generate an interview question.</div>
+                <div class="hero-actions"><button class="btn pink" onclick="randomGlow()">Generate question</button></div>
+              </div>
+              <div class="activity-step">
+                <div class="step-title">04 · Storytelling frames</div>
+                <div class="starter-grid">
+                  <div class="starter">I used to think that...</div>
+                  <div class="starter">I have learned that...</div>
+                  <div class="starter">People underestimated me because...</div>
+                  <div class="starter">I didn’t change who I was; I became...</div>
+                </div>
+              </div>
+              <div class="pronunciation">
+                <h3>Pronunciation Lab</h3>
+                <p>Past endings: <strong>judged</strong>, <strong>changed</strong>, <strong>liked</strong>, <strong>rejected</strong>, <strong>betrayed</strong>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="family" class="panel">
+          <div class="mission-layout">
+            <aside class="mission-sidebar card">
+              <div class="label">Mission 5</div>
+              <h2>Family, Dreams & Pressure</h2>
+              <p>Practice emotional disagreement, future plans and respectful confrontation.</p>
+              <ul class="mini-list">
+                <li><strong>Speaking mode:</strong> dinner table scene</li>
+                <li><strong>Language:</strong> disagreement, needs, future</li>
+                <li><strong>Final output:</strong> family conflict role-play</li>
+              </ul>
+            </aside>
+            <div class="activity">
+              <div class="activity-step">
+                <div class="step-title">01 · Warm-up</div>
+                <div class="chip-row">
+                  <span class="chip">Can love and pressure exist at the same time?</span>
+                  <span class="chip">Should parents choose a safe future?</span>
+                  <span class="chip">Is following your dream selfish?</span>
+                </div>
+              </div>
+              <div class="activity-step">
+                <div class="step-title">02 · Vocabulary boost</div>
+                <div class="chip-row">
+                  <span class="chip">pressure = presión</span>
+                  <span class="chip">expectations = expectativas</span>
+                  <span class="chip">phase = etapa pasajera</span>
+                  <span class="chip">trust = confiar</span>
+                  <span class="chip">disappoint = decepcionar</span>
+                </div>
+              </div>
+              <div class="activity-step">
+                <div class="step-title">03 · Main task: The Dinner Table Scene</div>
+                <p>Generate a family conflict. Play the dreamer, the parent, the sibling or the mediator.</p>
+                <div id="familyCard" class="random-card">Click below to generate a dinner table conflict.</div>
+                <div class="hero-actions"><button class="btn pink" onclick="randomFamily()">Generate conflict</button></div>
+              </div>
+              <div class="activity-step">
+                <div class="step-title">04 · Respectful disagreement</div>
+                <div class="starter-grid">
+                  <div class="starter">I understand your point, but...</div>
+                  <div class="starter">I don’t want to disappoint you.</div>
+                  <div class="starter">This is not just a phase.</div>
+                  <div class="starter">What I need from you is...</div>
+                </div>
+              </div>
+              <div class="pronunciation">
+                <h3>Pronunciation Lab</h3>
+                <p>Say this line with different emotions: <strong>“I’m trying to figure out who I am.”</strong> Try nervous, brave, frustrated and calm.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="vocabulary">
+        <div class="section-header">
+          <div>
+            <div class="label">Vocabulary Deck</div>
+            <h2>High-value words for better speaking</h2>
+          </div>
+          <p>Each word includes meaning, Spanish support, pronunciation focus and an example students can adapt.</p>
+        </div>
+
+        <div class="vocab-grid">
+          <article class="vocab">
+            <div>
+              <div class="vocab-word">misunderstood</div>
+              <small>Spanish: incomprendido/a</small>
+              <p>When people do not understand who you really are.</p>
+            </div>
+            <div class="example">She seems cold, but she is misunderstood.</div>
+          </article>
+          <article class="vocab">
+            <div>
+              <div class="vocab-word">people-pleaser</div>
+              <small>Spanish: persona que busca complacer a todos</small>
+              <p>Someone who tries to make everyone happy, even at their own cost.</p>
+            </div>
+            <div class="example">He is tired of being a people-pleaser.</div>
+          </article>
+          <article class="vocab">
+            <div>
+              <div class="vocab-word">comeback</div>
+              <small>Spanish: respuesta ingeniosa / regreso fuerte</small>
+              <p>A smart reply or a powerful return after a difficult moment.</p>
+            </div>
+            <div class="example">Her comeback left everyone speechless.</div>
+          </article>
+          <article class="vocab">
+            <div>
+              <div class="vocab-word">vulnerable</div>
+              <small>Pronunciation: practice /v/, not /b/</small>
+              <p>Open about feelings, fears or weaknesses.</p>
+            </div>
+            <div class="example">Being vulnerable is not weakness.</div>
+          </article>
+          <article class="vocab">
+            <div>
+              <div class="vocab-word">deal-breaker</div>
+              <small>Spanish: algo inaceptable</small>
+              <p>A problem that makes a relationship or situation impossible to continue.</p>
+            </div>
+            <div class="example">Dishonesty is a deal-breaker for me.</div>
+          </article>
+          <article class="vocab">
+            <div>
+              <div class="vocab-word">self-worth</div>
+              <small>Spanish: valor propio</small>
+              <p>The sense that you are valuable, regardless of approval or popularity.</p>
+            </div>
+            <div class="example">Your self-worth should not depend on popularity.</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="festival">
+        <div class="section-header">
+          <div>
+            <div class="label">Final Challenge</div>
+            <h2>The Iconic Scene Festival</h2>
+          </div>
+          <p>Students create an original final scene using the characters, vocabulary, pronunciation and emotional expression they practiced.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Generate your final scene</h3>
+            <p>Use this prompt as the basis for your final group performance.</p>
+            <div id="sceneCard" class="random-card">Click below to generate a final scene idea.</div>
+            <div class="hero-actions">
+              <button class="btn pink" onclick="randomScene()">Generate scene</button>
+            </div>
+            <div class="support">
+              <strong>Apoyo en español:</strong> La escena no tiene que ser perfecta. Debe tener conflicto, emoción, vocabulario de la caja y una decisión final clara.
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Production checklist</h3>
+            <p>Track your group’s progress before performing.</p>
+            <div class="progress-wrap"><div id="progressBar" class="progress-bar"></div></div>
+            <div class="checklist">
+              <label class="checkitem"><input type="checkbox" class="finalCheck"> We created 3 original characters.</label>
+              <label class="checkitem"><input type="checkbox" class="finalCheck"> We used at least 8 vocabulary words.</label>
+              <label class="checkitem"><input type="checkbox" class="finalCheck"> Every character speaks.</label>
+              <label class="checkitem"><input type="checkbox" class="finalCheck"> We included a dramatic reveal.</label>
+              <label class="checkitem"><input type="checkbox" class="finalCheck"> We included a memorable line.</label>
+              <label class="checkitem"><input type="checkbox" class="finalCheck"> We practiced pronunciation and intonation.</label>
+              <label class="checkitem"><input type="checkbox" class="finalCheck"> We included a final message.</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>Final scene frames</h3>
+          <div class="grid grid-3">
+            <div>
+              <h4>Conflict</h4>
+              <div class="starter">The problem started when...</div>
+              <div class="starter">Everything changed after...</div>
+              <div class="starter">The secret came out because...</div>
+            </div>
+            <div>
+              <h4>Emotion</h4>
+              <div class="starter">I didn’t tell you because...</div>
+              <div class="starter">I was afraid that...</div>
+              <div class="starter">What hurts the most is...</div>
+            </div>
+            <div>
+              <h4>Resolution</h4>
+              <div class="starter">From now on, I will...</div>
+              <div class="starter">I may not be perfect, but...</div>
+              <div class="starter">I finally understand that...</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>Reflection</h3>
+          <textarea placeholder="Write your exit ticket: What did your character learn? What did you improve in English?"></textarea>
+          <div class="hero-actions">
+            <button class="btn secondary" onclick="window.print()">Print or Save as PDF</button>
+            <a class="btn" href="#home">Back to top</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <h3>The Languages Box #1: Iconic Era</h3>
+          <p>Premium virtual speaking experience for Spanish-speaking English learners.</p>
+        </div>
+        <a class="btn secondary" href="#quiz">Start again</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const quizData = {
+      popular:{
+        title:"The Popular One",
+        desc:"You know how to shine, but your real challenge is letting people know the person behind the image.",
+        es:"Representa a alguien admirado por muchos, pero presionado por mantener una imagen perfecta.",
+        mission:"Explain one situation where being seen is not the same as being understood.",
+        vocab:["reputation","public image","pressure","admired","mask"]
+      },
+      rebel:{
+        title:"The Rebel",
+        desc:"You question rules, challenge expectations and refuse to become a copy of everyone else.",
+        es:"Representa a alguien independiente que necesita defender su voz sin aislarse de los demás.",
+        mission:"Defend a character who refuses to follow the crowd.",
+        vocab:["rebel","boundaries","judged","independent","misunderstood"]
+      },
+      romantic:{
+        title:"The Romantic",
+        desc:"You believe in meaningful connections, but you must learn the difference between love and fantasy.",
+        es:"Representa a alguien emocional, idealista y sensible a las relaciones.",
+        mission:"Give advice to someone who is ignoring red flags.",
+        vocab:["crush","red flag","deserve","vulnerable","honest"]
+      },
+      underdog:{
+        title:"The Underdog",
+        desc:"You may seem quiet at first, but people often underestimate how strong and thoughtful you are.",
+        es:"Representa a alguien que crece durante la historia y demuestra su valor.",
+        mission:"Tell us about a time when someone underestimated you.",
+        vocab:["underestimated","growth","self-worth","brave","invisible"]
+      },
+      overachiever:{
+        title:"The Overachiever",
+        desc:"You work hard and dream big, but your challenge is not measuring your value only through success.",
+        es:"Representa a alguien disciplinado, ambicioso y presionado por hacerlo todo bien.",
+        mission:"Talk about the difference between ambition and pressure.",
+        vocab:["ambitious","pressure","expectations","failure","self-worth"]
+      },
+      glow:{
+        title:"The Glow-Up Character",
+        desc:"Your story is about becoming more confident without losing your essence.",
+        es:"Representa una transformación personal: no cambiar para otros, sino crecer.",
+        mission:"Describe your before-and-after transformation.",
+        vocab:["glow-up","confidence","self-aware","awkward","transformation"]
+      },
+      villain:{
+        title:"The Villain in Disguise",
+        desc:"People may judge your attitude, but every sharp comeback hides a deeper story.",
+        es:"Representa a alguien que parece difícil, pero puede estar protegiéndose.",
+        mission:"Explain why your character is not evil, just hurt or misunderstood.",
+        vocab:["comeback","defensive","misunderstood","secret","vulnerable"]
+      },
+      bestfriend:{
+        title:"The Best Friend",
+        desc:"You are loyal and supportive, but your challenge is becoming the protagonist of your own story.",
+        es:"Representa a alguien que ayuda a todos, pero necesita elegir su propio camino.",
+        mission:"Explain why the best friend deserves a storyline too.",
+        vocab:["loyal","supportive","ignored","voice","choice"]
+      }
+    };
+
+    function showQuizResult(){
+      const values = [...document.querySelectorAll('input[type="radio"]:checked')].map(input => input.value);
+      const counts = values.reduce((acc, value) => {
+        acc[value] = (acc[value] || 0) + 1;
+        return acc;
+      }, {});
+      const winner = Object.keys(counts).sort((a,b) => counts[b] - counts[a])[0] || "underdog";
+      const result = quizData[winner] || quizData.underdog;
+      const el = document.getElementById("quizResult");
+      el.classList.add("show");
+      el.innerHTML = `
+        <div class="label">Your result</div>
+        <h2 style="font-size:2.2rem">${result.title}</h2>
+        <p>${result.desc}</p>
+        <div class="support"><strong>Apoyo en español:</strong> ${result.es}</div>
+        <h3>Speaking mission</h3>
+        <p>${result.mission}</p>
+        <h3>Vocabulary</h3>
+        <div class="chip-row">${result.vocab.map(word => `<span class="chip">${word}</span>`).join("")}</div>
+      `;
+    }
+
+    const randomProfiles = [
+      ["Mia Sterling","18","perfect, stylish and confident","afraid of being ordinary","she wants to leave her popular group","to become a filmmaker","too dramatic","I am not dramatic. I am cinematic."],
+      ["Leo Hart","19","cold, sarcastic and mysterious","scared of rejection","he writes love letters he never sends","to study abroad","rude but attractive","I care more than I show."],
+      ["Sasha Lane","18","ambitious and unstoppable","terrified of failure","she failed an exam and hid it","to win a scholarship","too intense","I was not born to be background noise."],
+      ["Nico Vega","20","funny, careless and charming","lonely when nobody is watching","he is tired of being the comic relief","to be taken seriously","immature","I make people laugh so they don’t ask questions."]
+    ];
+
+    function randomCharacter(){
+      const profile = randomProfiles[Math.floor(Math.random() * randomProfiles.length)];
+      ["cName","cAge","cImage","cInsecurity","cSecret","cDream","cRep","cPhrase"].forEach((id,index)=>{
+        document.getElementById(id).value = profile[index];
+      });
+      generateCharacterProfile();
+    }
+
+    function generateCharacterProfile(){
+      const get = id => document.getElementById(id).value.trim() || "Not defined yet";
+      const output = document.getElementById("characterOutput");
+      output.style.display = "block";
+      output.innerHTML = `
+        <div class="label">Character Profile</div>
+        <h2 style="font-size:2.3rem">${get("cName")}</h2>
+        <div class="grid grid-2">
+          <p><strong>Age:</strong><br>${get("cAge")}</p>
+          <p><strong>Public image:</strong><br>${get("cImage")}</p>
+          <p><strong>Private insecurity:</strong><br>${get("cInsecurity")}</p>
+          <p><strong>Secret:</strong><br>${get("cSecret")}</p>
+          <p><strong>Biggest dream:</strong><br>${get("cDream")}</p>
+          <p><strong>Reputation:</strong><br>${get("cRep")}</p>
+        </div>
+        <div class="callout">
+          <h3>Iconic phrase</h3>
+          <p style="font-size:1.2rem;color:var(--ink)"><strong>“${get("cPhrase")}”</strong></p>
+          <p><strong>Speaking mission:</strong> Present this character in 60 seconds using: “My character seems..., but actually...”</p>
+        </div>
+      `;
+    }
+
+    function openMission(id, btn){
+      document.querySelectorAll(".panel").forEach(panel => panel.classList.remove("active"));
+      document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+      btn.classList.add("active");
+    }
+
+    function pick(items){ return items[Math.floor(Math.random() * items.length)] }
+
+    function randomPop(){
+      document.getElementById("popCard").textContent = pick([
+        "A new student becomes popular in one week, and the old popular group feels threatened.",
+        "Someone creates a fake rumor to destroy another student’s reputation.",
+        "The outsider is invited to join the popular group, but only as a joke.",
+        "The most admired student secretly hates being popular.",
+        "Two best friends end up in rival cliques and must choose loyalty or status."
+      ]);
+    }
+
+    function randomLove(){
+      document.getElementById("loveCard").textContent = pick([
+        "Your crush only talks to you when nobody is watching.",
+        "Someone asked you out because of a bet, but now claims the feelings are real.",
+        "Your best friend is dating your ex and says you should be mature about it.",
+        "Someone says they love you but never makes time for you.",
+        "You like someone from a rival group and everyone is judging you."
+      ]);
+    }
+
+    function randomGlow(){
+      document.getElementById("glowCard").textContent = pick([
+        "What made you change: pain, ambition, love, rejection or self-respect?",
+        "Did you change for yourself or for others?",
+        "What part of your old self do you want to keep?",
+        "Who underestimated you, and what would you say to them now?",
+        "What advice would you give to someone who feels invisible?"
+      ]);
+    }
+
+    function randomFamily(){
+      document.getElementById("familyCard").textContent = pick([
+        "You want to study art, but your family wants you to choose a safer career.",
+        "You failed an important exam and your family thinks you are not trying.",
+        "You want to move abroad, but your family says you are abandoning them.",
+        "Your family thinks your online business idea is unrealistic.",
+        "You feel ignored because your sibling is considered the successful one."
+      ]);
+    }
+
+    function randomScene(){
+      document.getElementById("sceneCard").textContent = pick([
+        "Prom Night Disaster: a secret comes out before the final dance.",
+        "The Cafeteria Confrontation: a rumor explodes in public.",
+        "The Makeover Gone Wrong: a character realizes they changed for the wrong reasons.",
+        "The College Interview: a character must defend their real dream.",
+        "The Best Friend Betrayal: loyalty is tested after a secret is revealed.",
+        "The Final Speech: a character rewrites their reputation in front of everyone."
+      ]);
+    }
+
+    document.querySelectorAll(".finalCheck").forEach(check => {
+      check.addEventListener("change", () => {
+        const checks = [...document.querySelectorAll(".finalCheck")];
+        const done = checks.filter(item => item.checked).length;
+        document.getElementById("progressBar").style.width = `${(done / checks.length) * 100}%`;
+      });
+    });
+  </script>
+</body>
+</html>
